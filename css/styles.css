@@ -451,6 +451,46 @@ img {
     padding-top: 12px;
 }
 
+.footer-subscription {
+    display: flex;
+}
+
+.form-subscription {
+    margin-right: 12px;
+}
+.e-mail {
+    position: absolute;
+    padding-top: 15px;
+    padding-left: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-subscription {
+    width: 358px;
+    height: 50px;
+    padding-left: 79px;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: 16px;
+}
+
+.input-subscription:focus-within {
+    border-color: var(--accent-color);
+}
+
+.subscription-icon {
+    margin-left: 10px;
+}
 /*========================СТИЛИ ДЛЯ portfolio.html===================*/
 
 /*========ФИЛЬТР=======*/
@@ -593,6 +633,7 @@ img {
     visibility: hidden;
 }
 .modal {
+    position: relative;
     /* display: flex; */
     justify-content: flex-end;
     position: absolute;
@@ -618,6 +659,9 @@ img {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
     display: block;
     padding: 6px;
     margin: 0;
@@ -626,6 +670,10 @@ img {
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+}
+
+.close-btn:hover {
+    fill: #188CE8;
 }
 
 .form-title {
@@ -689,4 +737,29 @@ img {
     fill: #188CE8;
     outline: none;
     border-color: #188CE8;
+}
+
+.checkbox-label {
+    display: flex;
+    outline: 1px solid tomato;
+    margin-bottom: 30px;
+}
+
+.checkbox-icon {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border: 1px solid #212121;
+    border-radius: 2px;
+}
+
+.checkbox:checked + .checkbox-icon {
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    background-size: contain;
+    background-origin: border-box;
+}
+
+.send {
+    
 }
