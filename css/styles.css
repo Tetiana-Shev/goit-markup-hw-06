@@ -202,7 +202,7 @@ img {
     padding: 10px 32px;
     min-width: 200px;
     border: transparent;
-
+    
     color: var(--white);
     background-color: var(--accent-color);
     text-align: center;
@@ -482,13 +482,40 @@ img {
     background-color: transparent;
     color: rgba(255, 255, 255, 0.6);
     font-style: 16px;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.input-subscription:hover,
 .input-subscription:focus-within {
     border-color: var(--accent-color);
 }
+.button-subscription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 10px ;
+    min-width: 200px;
+    border: transparent;
+    
+    color: var(--white);
+    background-color: var(--accent-color);
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+.button-subscription:hover,
+.button-subscription:focus {
+    background-color: #188CE8}
 
 .subscription-icon {
+    display: flex;
+    content: '';
     margin-left: 10px;
 }
 /*========================СТИЛИ ДЛЯ portfolio.html===================*/
@@ -670,6 +697,8 @@ img {
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:hover {
@@ -696,12 +725,14 @@ img {
     display: flex;
     flex-direction: column;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-label {
     margin-bottom: 4px;
-
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.01em;
@@ -719,6 +750,7 @@ img {
     font: inherit;
     outline: none;
     
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus-within {border-color: #188CE8;}
@@ -730,7 +762,6 @@ img {
     
     display: block;
     content: '';
-    
 }
 
 .form-field:focus-within {
@@ -739,18 +770,63 @@ img {
     border-color: #188CE8;
 }
 
+.textarea {
+    width: 448px;
+    height: 120px;
+    resize: none;
+    padding: 12px 16px;
+    /* margin-bottom: 20px; */
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textarea::placeholder {
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+.textarea:focus-within {
+    border-color: var(--accent-color);
+}
+
 .checkbox-label {
     display: flex;
+    align-items: center;
+    justify-content: center;
     outline: 1px solid tomato;
     margin-bottom: 30px;
 }
 
+.checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 .checkbox-icon {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 16px;
     height: 15px;
-    border: 1px solid #212121;
+    background-color: transparent;
+    margin-right: 7px;
+    border: 2px solid #212121;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0 / 25%);
     border-radius: 2px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox:checked + .checkbox-icon {
@@ -760,6 +836,12 @@ img {
     background-origin: border-box;
 }
 
+.checkbox-link {
+    margin-left: 5px;
+    color: var(--accent-color);
+}
 .send {
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
