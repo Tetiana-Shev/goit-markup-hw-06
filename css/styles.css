@@ -651,7 +651,8 @@ img {
     background-color: rgba(0, 0, 0, 0.2);
 
     opacity: 1;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -660,16 +661,11 @@ img {
     visibility: hidden;
 }
 .modal {
-    position: relative;
-    /* display: flex; */
-    justify-content: flex-end;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 40px;
-    /* padding-top: 12px;
-    padding-right: 8px;  */
     border-radius: 4px;
     min-width: 528px;
     min-height: 581px;
@@ -677,11 +673,12 @@ img {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden .modal {
-    opacity: 0;
+    /* opacity: 0; */
     transform: translate(-50%, -50%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -689,7 +686,9 @@ img {
     position: absolute;
     top: 8px;
     right: 8px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 6px;
     margin: 0;
     width: 30px;
@@ -697,12 +696,12 @@ img {
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-
+    cursor: pointer;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:hover {
-    fill: #188CE8;
+    fill: var(--accent-color);
 }
 
 .form-title {
@@ -791,12 +790,10 @@ img {
     border-color: var(--accent-color);
 }
 
-.checkbox-label {
+.checkbox-field {
     display: flex;
     align-items: center;
     justify-content: center;
-    outline: 1px solid tomato;
-    margin-bottom: 30px;
 }
 
 .checkbox {
@@ -813,7 +810,14 @@ img {
     overflow: hidden;
 }
 
-.checkbox-icon {
+.checkbox-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.checkbox-text span {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -828,18 +832,24 @@ img {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.checkbox-icon {
+    fill: transparent;
+}
 
-.checkbox:checked + .checkbox-icon {
+.checkbox:checked + .checkbox-text span {
     border-color: var(--accent-color);
     background-color: var(--accent-color);
-    background-size: contain;
-    background-origin: border-box;
+}
+
+.checkbox:checked + .checkbox-text .checkbox-icon {
+    fill: var(--white);
 }
 
 .checkbox-link {
     margin-left: 5px;
     color: var(--accent-color);
 }
+
 .send {
     display: flex;
     align-items: center;
