@@ -380,20 +380,18 @@
 
                 <div class="footer-thumb-subscription">
                     <h3  class="footer-title">Подпишитесь на рассылку</h3>
-                    <span class="footer-subscription">
-                        <form action="" class="form-subscription">
-                            <label for="" class="email-label">
+                        <form class="form-subscription">
+                            <label class="email-label">
                                 <span class="e-mail">E-mail</span>
                             </label>
-                            <input type="mail" name="mail" class="input-subscription">
+                            <input type="email" name="email" class="input-subscription">
+                            <button type="submit" class="button-subscription">
+                                Подписаться
+                            <svg class="subscription-icon" width="24" height="24">
+                                <use href="./images/icons.svg#icon-send"></use>
+                            </svg>
+                            </button>
                         </form>
-                    <button type="submit" class="button-subscription">
-                        Подписаться
-                        <svg class="subscription-icon" width="24" height="24">
-                            <use href="./images/icons.svg#icon-send"></use>
-                        </svg>
-                    </button>
-                    </span>
                 </div>
             </div>
         </div>
@@ -407,8 +405,8 @@
                 </svg>
             </button>
             
-            <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
-            <form  action="" class="form js-speaker-form">
+            <p class="form-title">Оставьте свои данные, мы вам перезвоним</p>
+            <form class="form js-speaker-form">
                 <label class="form-field">
                     <span class="form-label">Имя</span>
                     <input class="form-input" type="text" name="name">
@@ -433,9 +431,9 @@
                     </svg>
                 </label>
 
-                <label for="" class="form-field">
+                <label class="form-field field">
                     <span  class="form-label">Комментарий</span>
-                    <textarea class="textarea" name="comment" id="" rows="10" placeholder="Введите текст"></textarea>
+                    <textarea class="textarea" name="comment" rows="10" placeholder="Введите текст"></textarea>
                 </label>
 
                 <div class="checkbox-field">
@@ -467,25 +465,5 @@
     </div>
 
     <script src="./js/modal.js"></script>
-
-    <script>
-        (() => {
-        document
-            .querySelector('.js-speaker-form')
-            .addEventListener('submit', e => {
-            e.preventDefault();
-
-            new FormData(e.currentTarget).forEach((value, name) =>
-                console.log(`${name}: ${value}`),
-            );
-            });
-        })();
-    </script>
 </body>
-</html 
-
-
-
-<symbol id="icon-check" viewBox="0 0 42 32">
-<path fill="#fff" style="fill: var(--color1, #fff); stroke: var(--color1, #fff)" stroke="#fff" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.64" d="M6.262 15.206l-0.221-0.211-0.221 0.208-3.085 2.925 0.243 0.234 11.408 10.88 0.221-0.211 24.256-23.139-0.243-0.23-3.043-2.902-0.221 0.211-20.97 19.987-8.125-7.75z"></path>
-</symbol>
+</html>
